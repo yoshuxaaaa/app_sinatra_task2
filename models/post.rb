@@ -11,11 +11,11 @@ class Post
 
   def all
     result = @connection.exec('SELECT * FROM books')
-    a = Array.new
+    array = Array.new
     result.each do |tuple|
-      a << Hash[:id, tuple['id'], :title, tuple['title'], :content, tuple['content']]
+      array << Hash[:id, tuple['id'], :title, tuple['title'], :content, tuple['content']]
     end
-    a
+    array
   end
 
   def find(id)
